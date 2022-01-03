@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="short icon" href="favicon.ico" />
+    <title>Bulls&Cows</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-info">
+          <div class="logo">
+            <img src="./images/logo.jpeg" alt="Б&К" class="logo-img" />
+          </div>
+          <nav class="info-menu">
+            <ul class="menu">
+              <li><a href="https://t.me/Mosk104">Контакты</a></li>
+              <li><a href="">Еще</a></li>
+              <li>
+                <a
+                  href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D0%BA%D0%B8_%D0%B8_%D0%BA%D0%BE%D1%80%D0%BE%D0%B2%D1%8B"
+                  target="_blank"
+                  >Подробнее об игре</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="container">
+        <div class="content-h">
+          <h1>Быки и коровы</h1>
+        </div>
+        <div class="content-item">
+          <div class="content-complexity">
+            <div class="complexity-radio">
+              <div class="form-radio">
+                <label>
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="complexity"
+                    value="3"
+                  />
+                  3-значное число
+                </label>
+              </div>
+              <div class="form-radio">
+                <label>
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="complexity"
+                    value="4"
+                  />
+                  4-значное число
+                </label>
+              </div>
+              <div class="form-radio">
+                <label>
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="complexity"
+                    value="5"
+                  />
+                  5-значное число
+                </label>
+              </div>
+              <div class="form-radio">
+                <label>
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="complexity"
+                    value="6"
+                  />
+                  6-значное число
+                </label>
+              </div>
+            </div>
+            <div class="compexity-btn">
+              <button class="btn" id="startGameBtn">
+                Начать игру с выбранной сложностью
+              </button>
+            </div>
+          </div>
+          <div class="content-rules">fgre</div>
+        </div>
+        <div class="content-game">
+          <div class="game-tools">
+            <input
+              id="input"
+              type="number"
+              class="input-number"
+              placeholder="Введите число"
+              disabled="true"
+            />
+            <div class="tools-btn">
+              <button class="btn" id="newMoveBtn" disabled="true">
+                Сделать ход
+              </button>
+              <button class="btn" id="nextGame">Новая игра</button>
+            </div>
+          </div>
+          <div id="result"></div>
+        </div>
+      </div>
+    </div>
+    <footer>Здесь будет футер</footer>
+    <script src="index.js"></script>
+  </body>
+</html>
