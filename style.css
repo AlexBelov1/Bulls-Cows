@@ -7,18 +7,8 @@ body {
   margin: 0;
   background-color: rgb(224, 225, 226);
 }
-.content {
-  display: flex;
-}
-.container {
-  width: 1140px;
-}
-.logo-img {
-  height: 80px;
-  width: 80px;
-}
 header {
-  height: 80px;
+  height: 60px;
   background-color: #3775dd;
 }
 .header-info {
@@ -32,10 +22,24 @@ header {
   align-items: center;
   width: 100%;
 }
+.logo-img {
+  height: 60px;
+  width: 60px;
+}
+.content-items {
+  display: flex;
+}
+.container {
+  width: 1140px;
+}
 footer {
   background-color: #3775dd;
-  height: 80px;
+  height: 60px;
   text-align: center;
+}
+
+.input-number {
+  margin-bottom: 20px;
 }
 
 .btn {
@@ -79,22 +83,61 @@ li {
 }
 
 .content-h {
-  align-content: center;
-  justify-content: center;
+  /* align-content: center;
+  justify-content: center; */
+
   display: flex;
 }
 
 a {
   color: #fff;
 }
-.content-item {
+.content-items {
   display: flex;
   justify-content: space-between;
 }
-.content-rules {
-  width: 50%;
+.item-rules {
+  width: 40%;
 }
 .rules-logo {
   height: 200px;
   width: 200px;
+}
+
+/* Модальный (фон) */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 1000%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0, 0, 0); /* Цвет запасной вариант */
+  background-color: rgba(0, 0, 0, 0.4); /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% сверху и по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+/* Кнопка закрытия */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
