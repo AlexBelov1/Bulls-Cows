@@ -18,7 +18,6 @@
           <nav class="info-menu">
             <ul class="menu">
               <li><a href="https://t.me/Mosk104">Контакты</a></li>
-              <li><a href="">Еще</a></li>
               <li>
                 <a
                   href="https://ru.wikipedia.org/wiki/%D0%91%D1%8B%D0%BA%D0%B8_%D0%B8_%D0%BA%D0%BE%D1%80%D0%BE%D0%B2%D1%8B"
@@ -36,79 +35,97 @@
         <div class="content-h">
           <h1>Быки и коровы</h1>
         </div>
-        <div class="content-item">
-          <div class="content-complexity">
-            <div class="complexity-radio">
-              <div class="form-radio">
-                <label>
-                  <input
-                    class="custom-radio"
-                    type="radio"
-                    name="complexity"
-                    value="3"
-                  />
-                  3-значное число
-                </label>
+        <div class="content-one">
+          <div class="content-item">
+            <div class="content-complexity">
+              <div class="complexity-radio">
+                <div class="form-radio">
+                  <label>
+                    <input
+                      class="custom-radio"
+                      type="radio"
+                      name="complexity"
+                      value="3"
+                    />
+                    3-значное число
+                  </label>
+                </div>
+                <div class="form-radio">
+                  <label>
+                    <input
+                      class="custom-radio"
+                      type="radio"
+                      name="complexity"
+                      value="4"
+                    />
+                    4-значное число
+                  </label>
+                </div>
+                <div class="form-radio">
+                  <label>
+                    <input
+                      class="custom-radio"
+                      type="radio"
+                      name="complexity"
+                      value="5"
+                    />
+                    5-значное число
+                  </label>
+                </div>
+                <div class="form-radio">
+                  <label>
+                    <input
+                      class="custom-radio"
+                      type="radio"
+                      name="complexity"
+                      value="6"
+                    />
+                    6-значное число
+                  </label>
+                </div>
               </div>
-              <div class="form-radio">
-                <label>
-                  <input
-                    class="custom-radio"
-                    type="radio"
-                    name="complexity"
-                    value="4"
-                  />
-                  4-значное число
-                </label>
+              <div class="compexity-btn">
+                <button class="btn" id="startGameBtn">
+                  Начать игру с выбранной сложностью
+                </button>
               </div>
-              <div class="form-radio">
-                <label>
-                  <input
-                    class="custom-radio"
-                    type="radio"
-                    name="complexity"
-                    value="5"
-                  />
-                  5-значное число
-                </label>
-              </div>
-              <div class="form-radio">
-                <label>
-                  <input
-                    class="custom-radio"
-                    type="radio"
-                    name="complexity"
-                    value="6"
-                  />
-                  6-значное число
-                </label>
-              </div>
-            </div>
-            <div class="compexity-btn">
-              <button class="btn" id="startGameBtn">
-                Начать игру с выбранной сложностью
-              </button>
-            </div>
-          </div>
-          <div class="content-rules">fgre</div>
-        </div>
-        <div class="content-game">
-          <div class="game-tools">
-            <input
-              id="input"
-              type="number"
-              class="input-number"
-              placeholder="Введите число"
-              disabled="true"
-            />
-            <div class="tools-btn">
-              <button class="btn" id="newMoveBtn" disabled="true">
-                Сделать ход
-              </button>
-              <button class="btn" id="nextGame">Новая игра</button>
             </div>
           </div>
-          <div id="result"></div>
+          <div class="content-game">
+            <div class="game-tools">
+              <input
+                id="input"
+                type="number"
+                class="input-number"
+                placeholder="Введите число"
+                disabled="true"
+              />
+              <div class="tools-btn">
+                <button class="btn" id="newMoveBtn" disabled="true">
+                  Сделать ход
+                </button>
+                <button class="btn" id="nextGame">Новая игра</button>
+              </div>
+            </div>
+            <div id="result"></div>
+          </div>
+          <div class="content-rules">
+            <h2>Правила игры</h2>
+            <p>
+              Компьютер загадывает число из нескольких различающихся цифр (от 3
+              до 6). Игроку дается несколько попыток на то, чтобы угадать это
+              число. После каждой попытки компьютер сообщает количество
+              совпавших цифр стоящих не на своих местах(число коров), а также
+              количество правильных цифр на своих местах(число быков).
+            </p>
+            <h3>Пример</h3>
+            <p>
+              Компьютер задумал 1834. Игрок сделал ход 1394. Компьютер ответил:
+              2 быка (цифры 1 и 4) и 1 корова (цифра 3).
+            </p>
+
+            <img class="rules-logo" src="images/cow.png" alt="cow" />
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 const docInput = document.getElementById("input");
 const docNewMoveBtn = document.getElementById("newMoveBtn");
 const docNextGame = document.getElementById("startGameBtn");
-
+let doc = [];
 // генерация случайного числа с проверкой уникальности цифр
 function getRandomNumber(bitness) {
   let randomUnicNumber = [];
@@ -51,9 +51,11 @@ const compariseNumber = (inputNumber, hiddenNumber) => {
       (docNewMoveBtn.disabled = true),
       (docInput.disabled = true)
     );
-  return (document.getElementById(
-    "result"
-  ).innerHTML = `Число ${input.value}: Быков = ${countBulls} Коров = ${countCows}`);
+  doc +=
+    "<div>" +
+    `Число ${input.value}: Быков = ${countBulls} Коров = ${countCows} ` +
+    "</div>";
+  return (document.getElementById("result").innerHTML = doc);
 };
 
 let bitness;
@@ -69,7 +71,6 @@ startGameBtn.onclick = function () {
   docNewMoveBtn.disabled = false;
   docInput.disabled = false;
   docNextGame.disabled = true;
-  document.querySelectorAll('input[name="complexity"]:cheked').disabled = true; // тут надо сделать недоступным радио
   return randomNumber;
 };
 
@@ -83,6 +84,8 @@ newMoveBtn.onclick = function () {
 
 nextGame.onclick = function () {
   return (
+    (doc = ""),
+    (document.getElementById("result").innerHTML = doc),
     (docNewMoveBtn.disabled = true),
     (docInput.disabled = true),
     (docNextGame.disabled = false)
