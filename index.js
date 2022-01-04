@@ -1,6 +1,7 @@
 const docInput = document.getElementById("input");
 const docNewMoveBtn = document.getElementById("newMoveBtn");
 const docNextGame = document.getElementById("startGameBtn");
+const modal = document.getElementById("myModal");
 let doc = [];
 // генерация случайного числа с проверкой уникальности цифр
 function getRandomNumber(bitness) {
@@ -47,7 +48,8 @@ const compariseNumber = (inputNumber, hiddenNumber) => {
       "Число должно состоять из неповторяющихся чисел!");
   if (inputNumber === hiddenNumber)
     return (
-      (document.getElementById("result").innerHTML = "ВЫ ПОБЕДИЛИ!"),
+      (document.getElementById("win-text").innerHTML = "ВЫ ПОБЕДИЛИ!"),
+      (modal.style.display = "block"),
       (docNewMoveBtn.disabled = true),
       (docInput.disabled = true)
     );
@@ -91,6 +93,7 @@ nextGame.onclick = function () {
     (docNextGame.disabled = false)
   );
 };
+// modal.style.display = "block"; // видимость модального окна
 
 // функция проверки повторяющихся введенных символов
 function inputCorrectData(val) {
@@ -108,4 +111,19 @@ input.onkeypress = function () {
 // Ввод только цифр(type="number" позволяет ввести константу "e")
 input.onkeydown = function (e) {
   return !/^\D$/.test(e.key);
+};
+
+// Получить элемент <span>, который закрывает модальный
+var span = document.getElementsByClassName("close")[0];
+
+// Закрытие модального окна на <span> (x)
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Закрытие модального окна в любом месте
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 };
