@@ -2,7 +2,9 @@ const docInput = document.getElementById("input");
 const docNewMoveBtn = document.getElementById("newMoveBtn");
 const docNextGame = document.getElementById("startGameBtn");
 const modal = document.getElementById("myModal");
-let doc = [];
+const docResult = document.getElementById("result");
+
+let doc = "";
 // генерация случайного числа с проверкой уникальности цифр
 function getRandomNumber(bitness) {
   let randomUnicNumber = [];
@@ -28,7 +30,6 @@ function find(array, value) {
 const compariseNumber = (inputNumber, hiddenNumber) => {
   let countBulls = 0;
   let countCows = 0;
-  let res;
   for (let i = 0; i < bitness; i++) {
     if (inputNumber[i] === hiddenNumber[i]) {
       countBulls++;
@@ -41,14 +42,21 @@ const compariseNumber = (inputNumber, hiddenNumber) => {
     }
   }
   if (inputNumber.length < hiddenNumber.length)
-    return (document.getElementById("result").innerHTML =
-      "Слишком короткое число");
+    return (docResult.innerHTML = "Слишком короткое число");
+  document.get;
   if (inputCorrectData(inputNumber))
-    return (document.getElementById("result").innerHTML =
-      "Число должно состоять из неповторяющихся чисел!");
+    return (docResult.innerHTML =
+      "<p>" +
+      "Число должно состоять" +
+      "</p>" +
+      "<p>" +
+      "из неповторяющихся чисел!" +
+      "</p>");
   if (inputNumber === hiddenNumber)
     return (
-      (document.getElementById("win-text").innerHTML = "ВЫ ПОБЕДИЛИ!"),
+      (document.getElementById(
+        "win-text"
+      ).innerHTML = `ВЫ ПОБЕДИЛИ! Загаданное компьютером число ${hiddenNumber}`),
       (modal.style.display = "block"),
       (docNewMoveBtn.disabled = true),
       (docInput.disabled = true)
@@ -57,7 +65,8 @@ const compariseNumber = (inputNumber, hiddenNumber) => {
     "<div>" +
     `Число ${input.value}: Быков = ${countBulls} Коров = ${countCows} ` +
     "</div>";
-  return (document.getElementById("result").innerHTML = doc);
+
+  return (docResult.innerHTML = doc);
 };
 
 let bitness;
@@ -69,7 +78,6 @@ startGameBtn.onclick = function () {
   randomNumber = getRandomNumber(
     document.querySelector('input[name="complexity"]:checked').value
   );
-  console.log(randomNumber);
   docNewMoveBtn.disabled = false;
   docInput.disabled = false;
   docNextGame.disabled = true;
@@ -81,6 +89,7 @@ newMoveBtn.onclick = function () {
   compariseNumber(val, randomNumber);
   let inputValueArray = docInput.value.split("");
   docInput.value = "";
+  docNewMoveBtn.style.shadow = "0";
   return inputValueArray;
 };
 
@@ -93,12 +102,10 @@ nextGame.onclick = function () {
     (docNextGame.disabled = false)
   );
 };
-// modal.style.display = "block"; // видимость модального окна
 
 // функция проверки повторяющихся введенных символов
 function inputCorrectData(val) {
   val = val.split("").sort();
-  console.log(val);
   for (let i = 0; i < val.length; i++) {
     if (val[i] !== val[i + 1]) continue;
     return true;
