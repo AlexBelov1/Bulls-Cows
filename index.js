@@ -81,6 +81,7 @@ startGameBtn.onclick = function () {
   docNewMoveBtn.disabled = false;
   docInput.disabled = false;
   docNextGame.disabled = true;
+  enableRadio(false);
   return randomNumber;
 };
 
@@ -99,7 +100,8 @@ nextGame.onclick = function () {
     (document.getElementById("result").innerHTML = doc),
     (docNewMoveBtn.disabled = true),
     (docInput.disabled = true),
-    (docNextGame.disabled = false)
+    (docNextGame.disabled = false),
+    enableRadio(true)
   );
 };
 
@@ -134,3 +136,10 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+// Доступность выбора разрядности чисел
+function enableRadio(enabled) {
+  var buttons = document.getElementsByClassName("custom-radio");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].disabled = !enabled;
+  }
+}
